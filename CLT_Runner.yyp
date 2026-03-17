@@ -35,8 +35,13 @@
   },
   "name":"CLT_Runner",
   "resources":[
+    {"id":{"name":"obj_dir","path":"objects/obj_dir/obj_dir.yy",},},
+    {"id":{"name":"obj_esq","path":"objects/obj_esq/obj_esq.yy",},},
+    {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"spr_bg","path":"sprites/spr_bg/spr_bg.yy",},},
+    {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
+    {"id":{"name":"spr_troca_lado","path":"sprites/spr_troca_lado/spr_troca_lado.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

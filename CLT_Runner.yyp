@@ -36,6 +36,7 @@
   "name":"CLT_Runner",
   "resources":[
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"spr_bg","path":"sprites/spr_bg/spr_bg.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

@@ -15,6 +15,7 @@ if (!lado)
     if (instance_exists(obj_dir))
     {
         x = obj_dir.x;
+        y = obj_dir.y;
         dir = -1;
     }
 }
@@ -24,6 +25,7 @@ if (lado)
     if (instance_exists(obj_esq))
     {
         x = obj_esq.x;
+        y = obj_esq.y;
         dir = 1;
     }
 }

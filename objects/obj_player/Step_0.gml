@@ -6,10 +6,22 @@ var _right = keyboard_check_pressed(vk_left);
 var _left  = keyboard_check_pressed(vk_right);
 
 //Se eu apertar a setinha esquerda
-if (_left and lado == true) lado = false; //Eu vou para direita
+if (_left and lado == true)
+{
+    //Eu vou para direita
+    lado = false;
+    
+    efeito_squash(0.5, 1.5);
+} 
     
 //Se eu apertar a setinha para direita
-if (_right and lado == false) lado = true; //Eu vou para a direita
+if (_right and lado == false)
+{
+    //Eu vou para a direita
+    lado = true;
+    
+    efeito_squash(0.5, 1.5);
+} 
     
 
 //Se estou na direita
@@ -33,5 +45,5 @@ if (lado)
     }
 }
 
-if (instance_exists(obj_tran)) exit;
+retorna_efeito_squash(0.1);
 

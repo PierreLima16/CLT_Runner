@@ -68,6 +68,7 @@
     {"id":{"name":"rm_inicio","path":"rooms/rm_inicio/rm_inicio.yy",},},
     {"id":{"name":"rm_jogo","path":"rooms/rm_jogo/rm_jogo.yy",},},
     {"id":{"name":"scr_funcoes","path":"scripts/scr_funcoes/scr_funcoes.yy",},},
+    {"id":{"name":"scr_squash","path":"scripts/scr_squash/scr_squash.yy",},},
     {"id":{"name":"msc_game","path":"sounds/msc_game/msc_game.yy",},},
     {"id":{"name":"snd_morte","path":"sounds/snd_morte/snd_morte.yy",},},
     {"id":{"name":"snd_pickup","path":"sounds/snd_pickup/snd_pickup.yy",},},

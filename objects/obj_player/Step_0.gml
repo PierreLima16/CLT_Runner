@@ -1,3 +1,6 @@
+if (instance_exists(obj_tran)) image_speed = 0;
+else image_speed = 1;    
+
 //Iniciando as variáveis que guardam meus inputs
 var _right = keyboard_check_pressed(vk_left);
 var _left  = keyboard_check_pressed(vk_right);
@@ -29,4 +32,6 @@ if (lado)
         dir = 1;
     }
 }
+
+if (instance_exists(obj_tran)) exit;
 

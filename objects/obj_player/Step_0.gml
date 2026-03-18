@@ -45,5 +45,10 @@ if (lado)
     }
 }
 
+if (image_speed == 1)
+{
+    global.pontos += 0.06 * layer_get_vspeed("background");
+}
+
 retorna_efeito_squash(0.1);
 

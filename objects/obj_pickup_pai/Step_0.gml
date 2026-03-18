@@ -5,7 +5,7 @@ if (instance_exists(obj_tran))
 }  
 else
 {
-    vspeed = 1;
+    vspeed = layer_get_vspeed("Background");
     image_speed = 1;
 }
 

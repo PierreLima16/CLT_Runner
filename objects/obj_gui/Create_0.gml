@@ -1,6 +1,6 @@
 randomize();
 
-opcoes = ["JOGAR", "OPÇÕES", "SAIR"];
+opcoes = ["JOGAR", "SAIR"];
 sel = 0;
 pos = 0;
 cor1 = c_white;
@@ -78,16 +78,94 @@ menu = function()
                 _tran.destino = rm_jogo;
             break;
         
-            //Options
-            case 1:
-                
-            break;
-        
             //Fechar o jogo
-            case 2:
+            case 1:
                 game_end();
-            break;    
+            break;
         }
     }
     
 }
+        
+pontuacao = function()
+{
+    if (room == rm_jogo)
+    {
+        var _gui_w = display_get_gui_width();
+        var _gui_h = display_get_gui_height();
+        
+        draw_set_font(fnt_gui);
+        draw_set_halign(1);
+        
+        draw_set_colour(c_black);
+        draw_text(_gui_w/2 - 2, (_gui_h - 60) + 2, string(round(global.pontos)) + "KM");
+        
+        draw_set_colour(c_white);
+        draw_text(_gui_w/2, (_gui_h - 60), string(round(global.pontos)) + "KM");
+        
+        draw_set_font(-1);
+        draw_set_halign(-1);
+        draw_set_colour(-1);
+    }
+    
+    if (room == rm_inicio)
+    {
+        var _gui_w = display_get_gui_width();
+        var _gui_h = display_get_gui_height();
+        
+        draw_set_font(fnt_gui);
+        draw_set_halign(1);
+        
+        var _onda = sin(2 * get_timer()/1000000) * 10;
+        
+        draw_set_colour(c_black);
+        draw_text_transformed((_gui_w/2 - 2), (_gui_h/4) + 2, "RECORDE: \n" + string(round(global.recorde)) + "KM ", 0.85, 0.85, _onda);
+        
+        draw_set_colour(c_white);
+        draw_text_transformed(_gui_w/2, (_gui_h/4), "RECORDE: \n" + string(round(global.recorde)) + "KM ", 0.85, 0.85, _onda);
+        
+        draw_set_font(-1);
+        draw_set_halign(-1);
+        draw_set_colour(-1);
+    } 
+}
+        
+powerup = function()
+{
+    
+    static _peguei = false;
+    
+    
+    if (global.pw1)
+    {
+        if (!_peguei)
+        {
+            alarm[0] = room_speed * 5;
+            _peguei = true;
+        }
+        
+        layer_vspeed("Background", global.level * 10);
+        if (instance_exists(obj_gerador)) instance_destroy(obj_gerador); 
+        if (instance_exists(obj_CLT)) instance_destroy(obj_CLT);
+        if (instance_exists(obj_pickup_pai)) instance_destroy(obj_pickup_pai);
+        
+            
+    }
+    else
+    {
+        _peguei = false;
+        
+        layer_vspeed("Background", global.level);
+        
+        if (!instance_exists(obj_gerador))
+        {
+            instance_create_layer(0, 0, "Geral", obj_gerador);
+        }
+    }
+    
+    if (room != rm_jogo)
+    {
+        global.pw1 = false;
+        _peguei = false;
+    }
+}        

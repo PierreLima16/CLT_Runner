@@ -20,5 +20,5 @@ repeat(_qtd)
 }
 
 //Reativando o alarme 1
-alarm[1] = game_get_speed(gamespeed_fps) * random_range(10, 12);
+alarm[1] = game_get_speed(gamespeed_fps) * random_range(15, 20);
 
